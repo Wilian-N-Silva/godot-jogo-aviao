@@ -10,7 +10,8 @@ var mov = Vector2(0,-10)
 func _process(delta):
 	translate(mov)
 
-
 func colisao(area):
-	area.queue_free()
-	queue_free()
+	if(area.name=="Inimigo"):
+		area.explodir()
+		queue_free()
+	
