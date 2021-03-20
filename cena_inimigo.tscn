@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://imagens/3 - Inimigo.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 19.0339, 78.8459 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "explodindo"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 1206, 86, 466, 471 ), Rect2( 167, 623, 466, 471 ), Rect2( 695, 611, 466, 471 ), Rect2( 1207, 611, 466, 471 ), Rect2( 167, 1129, 466, 496 ), Rect2( 688, 1111, 539, 507 ), Rect2( 1413, 1215, 310, 271 ), Rect2( 257, 1717, 296, 219 ), Rect2( 800, 1715, 292, 176 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "voando"
+length = 0.6
+loop = true
+step = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Rect2( 165, 66, 491, 495 ), Rect2( 697, 86, 466, 471 ) ]
+}
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 540.326, 82.6381 )
+rotation = 3.14159
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="KinematicBody2D"]
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 697, 86, 466, 471 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D"]
+autoplay = "voando"
+anims/explodindo = SubResource( 2 )
+anims/voando = SubResource( 3 )
