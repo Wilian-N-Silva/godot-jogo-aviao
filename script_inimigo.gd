@@ -1,16 +1,16 @@
 extends Area2D
 
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = "text"
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-var mov = Vector2(0,-10)
+var velocidade = -10
 func _process(delta):
-	translate(mov)
-
-
-func colisao(area):
-	area.queue_free()
-	queue_free()
+	translate(Vector2(0, velocidade))
