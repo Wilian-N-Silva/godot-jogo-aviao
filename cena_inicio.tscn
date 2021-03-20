@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://imagens/phantom-wallpaper_1050484.jpg" type="Texture" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 1 )
+
+[sub_resource type="RichTextEffect" id=2]
+
+[sub_resource type="Animation" id=3]
+resource_name = "piscar"
+length = 1.5
+loop = true
+
+[node name="Node2D" type="Node2D"]
+
+[node name="imagem_inicio" type="Sprite" parent="."]
+position = Vector2( 516.12, 311.169 )
+scale = Vector2( 0.649322, 0.649322 )
+texture = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0, 0, 0, 0.180392 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pressione_enter" type="RichTextLabel" parent="."]
+margin_left = 110.0
+margin_top = 512.0
+margin_right = 931.0
+margin_bottom = 589.0
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "
+[center]PRESSIONE ENTER PARA INICIAR[/center]"
+text = "
+PRESSIONE ENTER PARA INICIAR"
+script = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Nome_jogo" type="RichTextLabel" parent="."]
+margin_left = 347.0
+margin_top = 32.0
+margin_right = 660.0
+margin_bottom = 73.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "Jogo de Avião"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/piscar = SubResource( 3 )

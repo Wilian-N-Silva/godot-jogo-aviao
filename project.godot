@@ -15,8 +15,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="2021 - 03 - 17 - Jogo Aviao"
-run/main_scene="res://cena_fase.tscn"
+config/name="2021 - 03 - 18 - Jogo Aviao"
+run/main_scene="res://cena_inicio.tscn"
 config/icon="res://icon.png"
 
 [autoload]
