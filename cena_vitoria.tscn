@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://imagens/win.webp" type="Texture" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 513.048, 301.606 )
+scale = Vector2( 1.31748, 1.31748 )
+texture = ExtResource( 1 )
