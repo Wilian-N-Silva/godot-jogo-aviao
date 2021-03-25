@@ -2,13 +2,13 @@ extends KinematicBody2D
 
 func ajustar_posicao():
 	
-	var largura = ($Sprite.texture.get_size().x * $Sprite.scale.x) / 2
-	var altura = ($Sprite.texture.get_size().y * $Sprite.scale.y) /2
+	var largura = ($Personagem1.texture.get_size().x * $Personagem1.scale.x) / 2
+	var altura = ($Personagem1.texture.get_size().y * $Personagem1.scale.y) /2
 	
-	if (global_position.x < largura):
-		global_position.x = largura
-	if (global_position.x > get_viewport().size.x-largura):
-		global_position.x = get_viewport().size.x-largura
+	if (global_position.x < largura - 30):
+		global_position.x = largura - 30
+	if (global_position.x > get_viewport().size.x-largura + 30):
+		global_position.x = get_viewport().size.x-largura + 30
 		
 	if (global_position.y < 60):
 		global_position.y = 60
@@ -17,7 +17,12 @@ func ajustar_posicao():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$Personagem1.visible = false
+	$Personagem2.visible = false
+	if (ScriptGlobal.personagem==1):
+		$Personagem1.visible = true
+	elif (ScriptGlobal.personagem==2):
+		$Personagem2.visible = true
 
 var mov = Vector2(0,0)
 var velocidade = 400
